@@ -1,24 +1,14 @@
 import React from "react"
 import { useRecoilValue, useSetRecoilState } from "recoil"
 
-import { userInputState, moviesQuery } from "./state"
+import { SearchMoviesResult } from "./SearchMoviesResult"
+import { userInputState } from "./state"
 
 const SearchMoviesInput = () => {
   const userInput = useRecoilValue(userInputState)
   const setUserInput = useSetRecoilState(userInputState)
   return (
     <input value={userInput} onChange={(e) => setUserInput(e.target.value)} />
-  )
-}
-
-const SearchMoviesResult = () => {
-  const movies = useRecoilValue(moviesQuery)
-  return (
-    <div>
-      {movies.map((movie) => (
-        <div key={movie.title}>{movie.title}</div>
-      ))}
-    </div>
   )
 }
 

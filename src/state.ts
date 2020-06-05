@@ -5,7 +5,7 @@ export const userInputState = atom({
   default: "",
 })
 
-interface Movie {
+export interface Movie {
   title: string
   summary: string
   poster: string
