@@ -1,0 +1,52 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "sourceType": "module",
+      "jsx": true,
+      "useJSXTextNode": true
+    },
+      "plugins": [
+      "@typescript-eslint",
+      "prettier",
+      "react",
+      "react-hooks"
+    ],
+    "extends": [
+      "plugin:prettier/recommended",
+      "plugin:import/warnings",
+      "plugin:import/typescript",
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended"
+    ],
+    "rules": {
+      "prettier/prettier": ["error"],
+      "curly": ["error", "all"],
+      "quotes": [2, "double"],
+      "import/order": [
+        "error",
+        {
+          "pathGroups": [
+            {
+              "pattern": "@/**",
+              "group": "external",
+              "position": "after"
+            }
+          ],
+          "pathGroupsExcludedImportTypes": ["builtin"],
+          "newlines-between": "always",
+          "alphabetize": {
+            "order": "asc"
+          }
+        }
+      ],
+      "import/no-unused-modules": [1, { "unusedExports": true }],
+      "import/no-named-as-default": [0],
+      "react/prop-types": [0]
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  }
+    
